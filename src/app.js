@@ -4,7 +4,7 @@ const express = require('express');
 
 const app = express();
 
-const router = require('./api')
+const router = require('./api/index.js')
 
 app.use('/', express.static('public'));
 

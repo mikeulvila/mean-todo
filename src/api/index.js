@@ -4,7 +4,7 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/api/todos', (req, res) => {
+router.get('/todos', (req, res) => {
   res.send('These are the todos');
 })
 
