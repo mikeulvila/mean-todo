@@ -1,0 +1,14 @@
+{
+  "name": "mean-todo",
+  "version": "1.0.0",
+  "description": "practice mean stack todo",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mike Ulvila <mikeulvila@me.com> (https://github.com/mikeulvila)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
