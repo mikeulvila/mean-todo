@@ -4,17 +4,9 @@ const express = require('express');
 
 const app = express();
 
+const router = require('./api')
+
 app.use('/', express.static('public'));
-
-const router = express.Router();
-
-router.get('/api/todos', (req, res) => {
-  res.send('These are the todos');
-})
-
-// TODO: add POST route for new entries
-// add put route to update
-// add delete to delete
 
 app.use('/api', router);
 
