@@ -2,9 +2,12 @@
 
 const express = require('express');
 
+const router = require('./api/index.js');
+
 const app = express();
 
-const router = require('./api/index.js')
+require('./database.js');
+
 
 app.use('/', express.static('public'));
 
