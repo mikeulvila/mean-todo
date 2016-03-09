@@ -15,6 +15,12 @@ angular.module('todoListApp')
         return todo
       };
     })
-    dataService.saveTodos(filteredTodos);
+    dataService.saveTodos(filteredTodos).finally($scope.resetTodoState());
   };
+
+  $scope.resetTodoState = () => {
+    $scope.todos.forEach((todo) => {
+      todo.edited = false;
+    });
+  }
 });
