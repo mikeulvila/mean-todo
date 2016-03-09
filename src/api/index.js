@@ -24,11 +24,23 @@ router.post('/todos', (req, res) => {
       return res.status(500).json({err: err.message});
     }
     res.json({todo: todo, message: 'Todo created.'});
-  })
+  });
+});
 
-})
+router.put('/todos/:id', (req, res) => {
+  const id = req.params.id;
+  const todo = req.body;
+  if (todo && todo._id !== id) {
+    return res.status(500).json({err: 'Id does not match.'});
+  }
+  Todo.findByIdAndUpdate(id, todo, {new: true}, (err, todo) => {
+    if (err) {
+      return res.status(500).json({err: err.message});
+    }
+    res.json({todo: todo, message: 'Todo updated.'});
+  });
+});
 
-// add put route to update
 // add delete to delete
 
 module.exports = router;
