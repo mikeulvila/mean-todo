@@ -17,7 +17,17 @@ router.get('/todos', (req, res) => {
   })
 })
 
-// TODO: add POST route for new entries
+router.post('/todos', (req, res) => {
+  const todo = req.body;
+  Todo.create(todo, (err, todo) => {
+    if (err) {
+      return res.status(500).json({err: err.message});
+    }
+    res.json({todo: todo, message: 'Todo created.'});
+  })
+
+})
+
 // add put route to update
 // add delete to delete
 

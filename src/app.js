@@ -1,6 +1,7 @@
 'use strict';
 
 const express = require('express');
+const parser = require('body-parser');
 
 const router = require('./api/index.js');
 
@@ -10,6 +11,7 @@ require('./database.js');
 require('./seed.js');
 
 app.use('/', express.static('public'));
+app.use(parser.json());
 
 app.use('/api', router);
 
