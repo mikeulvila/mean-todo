@@ -3,7 +3,16 @@
 const angular = require('angular');
 
 angular.module('todoListApp')
-.controller('mainCtrl', function($scope, dataService){
+.controller('mainCtrl', function($scope, $log, $interval, dataService){
+
+  $scope.seconds = 0;
+
+  $scope.counter = () => {
+    $scope.seconds++
+    $log.log($scope.seconds + 'have passed.');
+  }
+
+  $interval($scope.counter, 1000, 10);
 
   dataService.getTodos(function(response){
     var todos = response.data.todos;
