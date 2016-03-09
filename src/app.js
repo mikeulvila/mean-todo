@@ -7,7 +7,7 @@ const router = require('./api/index.js');
 const app = express();
 
 require('./database.js');
-
+require('./seed.js');
 
 app.use('/', express.static('public'));
 
